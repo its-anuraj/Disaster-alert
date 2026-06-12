@@ -9,8 +9,11 @@ const translations = {
     alerts: 'Alerts',
     sos: 'SOS',
     map: 'Map',
+    weatherTab: 'Weather',
     profile: 'Profile',
     currentLocation: 'Current Location',
+    highRisk: 'High Risk',
+    mediumRisk: 'Medium Risk',
     lowRisk: 'Low Risk',
     smartAssistant: 'Smart Emergency Assistant',
     tapToAlert: 'TAP TO ALERT',
@@ -79,8 +82,6 @@ const translations = {
     readMore: 'Read Full Report',
     familyContacts: 'Family Contacts',
     addContact: 'Add Contact',
-    familyContacts: 'Family Contacts',
-    addContact: 'Add Contact',
     phoneNumber: 'Phone Number',
     earthquakeTitle: 'Earthquake',
     earthquakeDesc: 'Drop to your hands and knees. Cover your head and neck under a sturdy table or desk. Hold on until the shaking stops. Stay away from windows and heavy furniture.',
@@ -101,15 +102,25 @@ const translations = {
     today: 'Today',
     tomorrow: 'Tomorrow',
     rainProb: 'Rain',
-    loadError: 'Could not load weather data.'
+    loadError: 'Could not load weather data.',
+    sosDesc: 'Hold the button to instantly alert local authorities and your emergency contacts.',
+    emergencyNumbers: 'Local Emergency Numbers',
+    police: 'Police',
+    ambulance: 'Ambulance',
+    fireBrigade: 'Fire Brigade',
+    disasterHelpline: 'Disaster Helpline',
+    nearbyDesc: 'Find safe zones and shelters near your location.'
   },
   hi: {
     home: 'होम',
     alerts: 'अलर्ट',
     sos: 'एसओएस (SOS)',
     map: 'नक्शा',
+    weatherTab: 'मौसम',
     profile: 'प्रोफ़ाइल',
     currentLocation: 'वर्तमान स्थान',
+    highRisk: 'उच्च ख़तरा',
+    mediumRisk: 'मध्यम ख़तरा',
     lowRisk: 'कम ख़तरा',
     smartAssistant: 'स्मार्ट आपातकालीन सहायक',
     tapToAlert: 'अलर्ट के लिए टैप करें',
@@ -154,7 +165,7 @@ const translations = {
     viewManageReports: 'रिपोर्ट देखें और प्रबंधित करें',
     logOut: 'लॉग आउट',
     signOutDesc: 'अपने खाते से साइन आउट करें',
-    getHelp: 'तुरंत मदद प्राप्त करें।',
+
     locating: 'पता लगा रहा है...',
     loadingMap: 'नक्शा और रास्ता लोड हो रहा है...',
     askQuestion: 'कोई सवाल पूछें...',
@@ -199,7 +210,14 @@ const translations = {
     today: 'आज',
     tomorrow: 'कल',
     rainProb: 'बारिश',
-    loadError: 'मौसम का डेटा लोड नहीं हो सका।'
+    loadError: 'मौसम का डेटा लोड नहीं हो सका।',
+    sosDesc: 'स्थानीय अधिकारियों और आपातकालीन संपर्कों को तुरंत सचेत करने के लिए बटन को दबाए रखें।',
+    emergencyNumbers: 'स्थानीय आपातकालीन नंबर',
+    police: 'पुलिस',
+    ambulance: 'एम्बुलेंस',
+    fireBrigade: 'फायर ब्रिगेड',
+    disasterHelpline: 'आपदा हेल्पलाइन',
+    nearbyDesc: 'अपने स्थान के पास सुरक्षित क्षेत्र और आश्रय खोजें।'
   }
 };
 

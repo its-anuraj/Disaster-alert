@@ -59,9 +59,9 @@ export default function Alerts() {
   }, []);
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-50 px-4">
+    <SafeAreaView className="flex-1 bg-slate-50 dark:bg-slate-950 px-4">
       <View className="py-4">
-        <Text className="text-3xl font-black text-slate-900 tracking-tight">{t('disasterAlerts')}</Text>
+        <Text className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">{t('disasterAlerts')}</Text>
       </View>
 
       {loading ? (
@@ -79,7 +79,7 @@ export default function Alerts() {
                   Linking.openURL(alert.url);
                 }
               }}
-              className="bg-white border border-slate-200 rounded-3xl overflow-hidden mb-4 shadow-sm"
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden mb-4 shadow-sm"
             >
               <View className={`h-1.5 ${alert.color}`} />
               <View className="p-5">
@@ -88,29 +88,29 @@ export default function Alerts() {
                     <View className={`w-10 h-10 rounded-full ${alert.bgLight} items-center justify-center mr-3`}>
                       <AlertTriangle color={alert.severity === t('high') ? '#ef4444' : '#f97316'} size={20} />
                     </View>
-                    <Text className="text-slate-900 font-bold text-lg flex-1">{alert.type} {t('warning')}</Text>
+                    <Text className="text-slate-900 dark:text-white font-bold text-lg flex-1">{alert.type} {t('warning')}</Text>
                   </View>
                   <View className={`${alert.bgLight} px-3 py-1 rounded-full`}>
                     <Text className={`${alert.textColor} font-bold text-xs`}>{alert.severity}</Text>
                   </View>
                 </View>
                 
-                <Text className="text-slate-600 text-sm mb-5 leading-relaxed">{alert.desc}</Text>
+                <Text className="text-slate-600 dark:text-slate-300 text-sm mb-5 leading-relaxed">{alert.desc}</Text>
 
-                <View className="flex-row items-center justify-between border-t border-slate-100 pt-4">
+                <View className="flex-row items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
                   <View className="flex-row items-center">
                     <View className="flex-row items-center mr-4">
                       <Navigation color="#94a3b8" size={14} className="mr-1.5" />
-                      <Text className="text-slate-500 text-xs font-bold">{alert.distance}</Text>
+                      <Text className="text-slate-500 dark:text-slate-400 text-xs font-bold">{alert.distance}</Text>
                     </View>
                     <View className="flex-row items-center">
                       <Clock color="#94a3b8" size={14} className="mr-1.5" />
-                      <Text className="text-slate-500 text-xs font-bold">{alert.time}</Text>
+                      <Text className="text-slate-500 dark:text-slate-400 text-xs font-bold">{alert.time}</Text>
                     </View>
                   </View>
                   
                   {alert.url && (
-                    <Text className="text-blue-500 font-bold text-xs">{t('readMore')} ➔</Text>
+                    <Text className="text-blue-500 dark:text-blue-400 font-bold text-xs">{t('readMore')} ➔</Text>
                   )}
                 </View>
               </View>

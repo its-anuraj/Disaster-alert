@@ -1,23 +1,25 @@
 import '../global.css';
 import { useEffect, useState, useRef } from 'react';
 import { Tabs } from 'expo-router';
-import { Home, AlertTriangle, ShieldAlert, Map as MapIcon, User } from 'lucide-react-native';
+import { Home, AlertTriangle, ShieldAlert, Map as MapIcon, User, CloudRain } from 'lucide-react-native';
 import { LanguageProvider, useLanguage } from '../context/LanguageContext';
-import * as Notifications from 'expo-notifications';
-import { registerForPushNotificationsAsync } from '../lib/notifications';
+import { useColorScheme } from 'nativewind';
 
 function TabNavigator() {
   const { t } = useLanguage();
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#ffffff',
-          borderTopColor: '#e2e8f0',
+          backgroundColor: isDark ? '#0f172a' : '#ffffff',
+          borderTopColor: isDark ? '#1e293b' : '#e2e8f0',
         },
         tabBarActiveTintColor: '#ef4444', // red-500
-        tabBarInactiveTintColor: '#64748b', // slate-500
+        tabBarInactiveTintColor: isDark ? '#94a3b8' : '#64748b',
       }}>
       <Tabs.Screen
         name="index"
@@ -48,6 +50,13 @@ function TabNavigator() {
         }}
       />
       <Tabs.Screen
+        name="weather"
+        options={{
+          title: t('weatherTab') || 'Weather',
+          tabBarIcon: ({ color }) => <CloudRain color={color} size={24} />,
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: t('profile'),
@@ -58,7 +67,11 @@ function TabNavigator() {
       <Tabs.Screen name="assistant" options={{ href: null }} />
       <Tabs.Screen name="guidelines" options={{ href: null }} />
       <Tabs.Screen name="incident-reports" options={{ href: null }} />
-      <Tabs.Screen name="weather" options={{ href: null }} />
+
+      <Tabs.Screen name="chat" options={{ href: null }} />
+      <Tabs.Screen name="checklist" options={{ href: null }} />
+      <Tabs.Screen name="first-aid" options={{ href: null }} />
+      <Tabs.Screen name="volunteer" options={{ href: null }} />
     </Tabs>
   );
 }
@@ -98,31 +111,6 @@ if (!publishableKey) {
 }
 
 export default function TabLayout() {
-  const [expoPushToken, setExpoPushToken] = useState<string | undefined>('');
-  const notificationListener = useRef<Notifications.Subscription>();
-  const responseListener = useRef<Notifications.Subscription>();
-
-  useEffect(() => {
-    registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
-
-    notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
-      console.log('Notification received:', notification);
-    });
-
-    responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
-      console.log('Notification response:', response);
-    });
-
-    return () => {
-      if (notificationListener.current) {
-        Notifications.removeNotificationSubscription(notificationListener.current);
-      }
-      if (responseListener.current) {
-        Notifications.removeNotificationSubscription(responseListener.current);
-      }
-    };
-  }, []);
-
   return (
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
       <LanguageProvider>
