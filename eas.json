@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 3.8.1"
+    "version": ">= 3.8.1",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
@@ -9,6 +10,9 @@
     },
     "preview": {
       "distribution": "internal",
+      "env": {
+        "npm_config_legacy_peer_deps": "true"
+      },
       "android": {
         "buildType": "apk"
       }
