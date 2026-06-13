@@ -109,7 +109,8 @@ const translations = {
     ambulance: 'Ambulance',
     fireBrigade: 'Fire Brigade',
     disasterHelpline: 'Disaster Helpline',
-    nearbyDesc: 'Find safe zones and shelters near your location.'
+    nearbyDesc: 'Find safe zones and shelters near your location.',
+    compass: 'Compass'
   },
   hi: {
     home: 'होम',
@@ -217,7 +218,8 @@ const translations = {
     ambulance: 'एम्बुलेंस',
     fireBrigade: 'फायर ब्रिगेड',
     disasterHelpline: 'आपदा हेल्पलाइन',
-    nearbyDesc: 'अपने स्थान के पास सुरक्षित क्षेत्र और आश्रय खोजें।'
+    nearbyDesc: 'अपने स्थान के पास सुरक्षित क्षेत्र और आश्रय खोजें।',
+    compass: 'दिशा सूचक (Compass)'
   }
 };
 

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, RadioReceiver, Wrench } from 'lucide-react-native';
 import { useRouter } from 'expo-router';

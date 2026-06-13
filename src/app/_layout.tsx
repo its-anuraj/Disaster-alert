@@ -1,7 +1,7 @@
 import '../global.css';
 import { useEffect, useState, useRef } from 'react';
 import { Tabs } from 'expo-router';
-import { Home, AlertTriangle, ShieldAlert, Map as MapIcon, User, CloudRain } from 'lucide-react-native';
+import { Home, AlertTriangle, ShieldAlert, Map as MapIcon, User, CloudRain, Compass } from 'lucide-react-native';
 import { LanguageProvider, useLanguage } from '../context/LanguageContext';
 import { useColorScheme } from 'nativewind';
 
@@ -54,6 +54,13 @@ function TabNavigator() {
         options={{
           title: t('weatherTab') || 'Weather',
           tabBarIcon: ({ color }) => <CloudRain color={color} size={24} />,
+        }}
+      />
+      <Tabs.Screen
+        name="compass"
+        options={{
+          title: t('compass') || 'Compass',
+          tabBarIcon: ({ color }) => <Compass color={color} size={24} />,
         }}
       />
       <Tabs.Screen
